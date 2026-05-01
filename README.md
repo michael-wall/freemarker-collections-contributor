@@ -39,6 +39,8 @@
 ## Information Template snippet using serviceLocator (not recommended) ##
 - Requires TemplateContextContributor and JournalArticleAssetEntryHelper.
 - Doesn't use assetEntryLocalService or journalArticleLocalService from TemplateContextContributor.
+- System Settings > Template Engines > FreeMarker Engine:
+	- Requires serviceLocator to be allowed.
 ```
 <#assign assetEntryLocalService = serviceLocator.findService("com.liferay.asset.kernel.service.AssetEntryLocalService")>
 <#assign journalArticleLocalService = serviceLocator.findService("com.liferay.journal.service.JournalArticleLocalService")>
@@ -63,7 +65,7 @@
 
 ## Information Template snippet using serviceLocator (not recommended) and request.getAttribute (not recommended). ##
 - Does not require TemplateContextContributor OR JournalArticleAssetEntryHelper.
-- System Settings > Template Engines > FreeMarker Engine.
+- System Settings > Template Engines > FreeMarker Engine:
 	- Requires 'org.apache.catalina.core.ApplicationHttpRequest' to be an Allowed class to call request.getAttribute.
 	- Requires serviceLocator to be allowed.
 ```
