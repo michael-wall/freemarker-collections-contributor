@@ -1,5 +1,5 @@
 ## Information Template snippet using journalArticleAssetEntryHelper ##
-- Makes use of the custom TemplateContextContributor.
+- Requires TemplateContextContributor and JournalArticleAssetEntryHelper.
 ```
 <#assign assetEntryId = journalArticleAssetEntryHelper.getAssetEntryId(request)!0>
 <#assign journalArticle = journalArticleAssetEntryHelper.getJouralArticleByAssetEntryId(assetEntryId)!>
@@ -15,7 +15,7 @@
 ```
 
 ## Information Template snippet using assetEntryLocalService and journalArticleLocalService ##
-- Makes use of the custom TemplateContextContributor.
+- Requires TemplateContextContributor and JournalArticleAssetEntryHelper.
 ```
 <#assign assetEntryId = journalArticleAssetEntryHelper.getAssetEntryId(request)!0>
 <#assign assetEntry = assetEntryLocalService.fetchAssetEntry(assetEntryId)!>
@@ -37,7 +37,8 @@
 ```
 
 ## Information Template snippet using serviceLocator (not recommended) ##
-- Makes limited use of the custom TemplateContextContributor.
+- Requires TemplateContextContributor and JournalArticleAssetEntryHelper.
+- Doesn't use assetEntryLocalService or journalArticleLocalService from TemplateContextContributor.
 ```
 <#assign assetEntryLocalService = serviceLocator.findService("com.liferay.asset.kernel.service.AssetEntryLocalService")>
 <#assign journalArticleLocalService = serviceLocator.findService("com.liferay.journal.service.JournalArticleLocalService")>
@@ -61,7 +62,7 @@
 ```
 
 ## Information Template snippet using serviceLocator (not recommended) and request.getAttribute (not recommended). ##
-- Makes no use of the custom TemplateContextContributor.
+- Does not require TemplateContextContributor OR JournalArticleAssetEntryHelper.
 - System Settings > Template Engines > FreeMarker Engine.
 	- Requires 'org.apache.catalina.core.ApplicationHttpRequest' to be an Allowed class to call request.getAttribute.
 	- Requires serviceLocator to be allowed.
