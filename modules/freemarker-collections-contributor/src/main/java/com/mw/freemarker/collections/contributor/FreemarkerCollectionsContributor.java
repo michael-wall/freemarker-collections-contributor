@@ -31,10 +31,11 @@ public class FreemarkerCollectionsContributor implements TemplateContextContribu
         Map<String, Object> contextObjects,
         HttpServletRequest httpServletRequest) {
 
+    	// These 2 can be commented out if using serviceLocator
         contextObjects.put("assetEntryLocalService", _assetEntryLocalService);
         contextObjects.put("journalArticleLocalService", _journalArticleLocalService);
         
-        contextObjects.put("journalArticleAssetEntryHelper", _journalArticleAssetEntryHelper);
+        contextObjects.put("journalArticleAssetEntryHelper", _journalArticleAssetEntryHelper);  
     }
     
     @Reference
