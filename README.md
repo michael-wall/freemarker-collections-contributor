@@ -38,7 +38,7 @@
 </#if>
 ```
 
-## Information Templace snippet using serviceLocator (not recommended) ##
+## Information Template snippet using serviceLocator (not recommended) ##
 - Does not make use of the custom TemplateContextContributor.
 ```
 <#assign assetEntryLocalService = serviceLocator.findService("com.liferay.asset.kernel.service.AssetEntryLocalService")>
