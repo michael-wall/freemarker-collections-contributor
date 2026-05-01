@@ -60,10 +60,11 @@
 </#if>
 ```
 
-## Information Template snippet using serviceLocator (not recommended) and request.getAttribute (not recommended) by allowing use ob both in System Settings > Template Engines > FreeMarker Engine. ##
+## Information Template snippet using serviceLocator (not recommended) and request.getAttribute (not recommended). ##
 - Makes no use of the custom TemplateContextContributor.
-- Requires 'org.apache.catalina.core.ApplicationHttpRequest' to be an Allowed class to call request.getAttribute.
-- Requires serviceLocator to be allowed.
+- System Settings > Template Engines > FreeMarker Engine.
+	- Requires 'org.apache.catalina.core.ApplicationHttpRequest' to be an Allowed class to call request.getAttribute.
+	- Requires serviceLocator to be allowed.
 ```
 <#assign assetEntryLocalService = serviceLocator.findService("com.liferay.asset.kernel.service.AssetEntryLocalService")>
 <#assign journalArticleLocalService = serviceLocator.findService("com.liferay.journal.service.JournalArticleLocalService")>
